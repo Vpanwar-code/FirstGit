@@ -8,3 +8,9 @@ var title=document.getElementsByClassName('list-group-item');
 console.log(title[1].textContent);
 title[1].style.fontWeight='bold';
 title[1].style.color='green';
+
+title[2].style.backgroundColor='green';
+
+for(var i=0; i<title.length; i++){
+    title[i].style.fontWeight='bold';
+}
