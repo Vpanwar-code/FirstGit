@@ -14,3 +14,9 @@ title[2].style.backgroundColor='green';
 for(var i=0; i<title.length; i++){
     title[i].style.fontWeight='bold';
 }
+
+var items= document.getElementsByTagName('li');
+items[4].style.color='blue';
+
+var items1=document.getElementByClassName('new-item');
+items1.style.fontWeight='bold';
