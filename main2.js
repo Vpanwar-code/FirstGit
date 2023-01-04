@@ -13,6 +13,13 @@ function saveToLocalStorage(event){
 
     function showUserOnScreen(obj){
         const parent=document.getElementById('users');
-        parent.innerHTML=parent.innerHTML+`<li>${obj.name}-${obj.email}</li>`;
+        parent.innerHTML=parent`<li>${obj.name}-${obj.email}</li>`;
+
+        const deletebtn=document.createElement('input');
+        deletebtn.type="button";
+        deletebtn.value='Delete';
+        deletebtn.onclick = () =>{
+            localStorage.removeItem(obj.email);
+        }
     }
 }
