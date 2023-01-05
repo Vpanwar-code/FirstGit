@@ -12,14 +12,22 @@ function saveToLocalStorage(event){
     showUserOnScreen(obj);
 
     function showUserOnScreen(obj){
-        const parent=document.getElementById('users');
-        parent.innerHTML=parent`<li>${obj.name}-${obj.email}</li>`;
+        const parentele=document.getElementById('users');
+        const childele=document.createElement('li');
+        childele.textContent=obj.name+' _ '+obj.email;
+        
 
-        const deletebtn=document.createElement('input');
-        deletebtn.type="button";
-        deletebtn.value='Delete';
-        deletebtn.onclick = () =>{
+        const editbtn=document.createElement('input');
+        editbtn.type='button';
+        editbtn.value='Edit';
+        editbtn.onclick = () =>{
             localStorage.removeItem(obj.email);
+            parentele.removeChild(childele);
+            document.getElementById('name').value=obj.name;
+            document.getElementById('email').value=obj.email;
         }
+       
+        childele.appendChild(editbtn);
+        parentele.appendChild(childele);
     }
 }
